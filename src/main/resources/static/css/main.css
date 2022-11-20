@@ -37,6 +37,10 @@ span.page.active {
     color: silver;
 }
 
+.totalCount {
+    text-align: right;
+}
+
 form {
     padding: 20px;
     border: 1px solid silver;

@@ -1,24 +1,31 @@
 [#ftl]
 [@c.page title="Seznam osob"]
     <h1>Seznam osob</h1>
-    <table class="u-full-width">
-        <thead>
-        <tr>
-            <th>Jméno</th>
-            <th>Příjmení</th>
-            <th>Datum narození</th>
-        </tr>
-        </thead>
-        <tbody>
-        [#list osoby.content as osoba]
+
+    [#list osoby.content]
+        <table class="u-full-width">
+            <thead>
             <tr>
-                <td>${osoba.jmeno}</td>
-                <td>${osoba.prijmeni}</td>
-                <td>${osoba.datumNarozeni?date?string}</td>
+                <th>Jméno</th>
+                <th>Příjmení</th>
+                <th>Datum narození</th>
             </tr>
-        [/#list]
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            [#items as osoba]
+                <tr>
+                    <td>${osoba.jmeno}</td>
+                    <td>${osoba.prijmeni}</td>
+                    <td>${osoba.datumNarozeni?date?string}</td>
+                </tr>
+            [/#items]
+            </tbody>
+        </table>
+    [#else]
+        <div>Seznam je prázdný.</div>
+    [/#list]
+
+    <div class="totalCount">Celkem nalezeno ${osoby.totalElements} záznamů.</div>
 
     [@c.pager /]
     [@c.controls /]
