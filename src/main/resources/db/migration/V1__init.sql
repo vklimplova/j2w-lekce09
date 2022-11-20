@@ -1,6 +1,6 @@
 CREATE TABLE adresa
 (
-    id    IDENTITY PRIMARY KEY,
+    id    INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     ulice VARCHAR(255) NOT NULL,
     obec  VARCHAR(255) NOT NULL,
     psc   CHAR(5)      NOT NULL
@@ -8,7 +8,7 @@ CREATE TABLE adresa
 
 CREATE TABLE osoba
 (
-    id             IDENTITY PRIMARY KEY,
+    id             INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     jmeno          VARCHAR(100) NOT NULL,
     prijmeni       VARCHAR(100) NOT NULL,
     datum_narozeni DATE         NOT NULL,

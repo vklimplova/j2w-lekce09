@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="cs" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dotazy</title>
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/css/normalize.css" th:href="@{/css/normalize.css}">
-    <link rel="stylesheet" href="/css/skeleton.css" th:href="@{/css/skeleton.css}">
-    <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}">
-    <link rel="icon" type="image/png" href="/images/favicon.png" th:href="@{/images/favicon.png}">
-</head>
-<body>
-<main class="container">
+[#ftl]
+[@c.page title="Dotazy"]
     <h1>Dotazy</h1>
 
     <h4>Zobrazit všechny záznamy</h4>
-    <form th:action="@{/}" method="get">
+    <form action="/" method="get">
         <div class="row">
             <div class="ten columns">Seřazené dle příjmení a jména
             </div>
@@ -25,7 +13,7 @@
         </div>
     </form>
 
-    <form th:action="@{/dle-data-narozeni}" method="get">
+    <form action="/dle-data-narozeni" method="get">
         <div class="row">
             <div class="ten columns">Sařezané dle data narození
             </div>
@@ -36,7 +24,7 @@
     </form>
 
     <h4>Podle roku narození</h4>
-    <form th:action="@{/rok-narozeni}" method="get">
+    <form action="/rok-narozeni" method="get">
         <div class="row">
             <div class="five columns">
                 <label for="od">Od</label>
@@ -53,7 +41,7 @@
     </form>
 
     <h4>Podle příjmení</h4>
-    <form th:action="@{/prijmeni}" method="get">
+    <form action="/prijmeni" method="get">
         <div class="row">
             <div class="ten columns">
                 <label for="prijmeni">Začátek příjmení</label>
@@ -66,7 +54,7 @@
     </form>
 
     <h4>Podle obce</h4>
-    <form th:action="@{/obec}" method="get">
+    <form action="/obec" method="get">
         <div class="row">
             <div class="ten columns">
                 <label for="obec">Obec</label>
@@ -79,7 +67,7 @@
     </form>
 
     <h4>Podle věku</h4>
-    <form th:action="@{/minimalni-vek}" method="get">
+    <form action="/minimalni-vek" method="get">
         <div class="row">
             <div class="ten columns">
                 <label for="vek">Starší než</label>
@@ -90,6 +78,4 @@
             </div>
         </div>
     </form>
-</main>
-</body>
-</html>
+[/@c.page]

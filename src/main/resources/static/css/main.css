@@ -16,13 +16,25 @@ body {
     align-self: flex-end;
 }
 
-a.page {
-    padding: 0 1em;
+.page {
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    border-radius: 50%;
 }
 
-a.page.active {
-    color: silver;
+a.page:hover {
+    background-color: #F1F1F1;
+}
+
+a.page {
+    cursor: pointer;
     text-decoration: none;
+}
+
+span.page.active {
+    cursor: not-allowed;
+    color: silver;
 }
 
 form {
