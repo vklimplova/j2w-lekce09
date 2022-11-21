@@ -49,6 +49,7 @@ public class OsobaController {
             .query(helper.getOriginatingQueryString(request))
             .replaceQueryParam("size")
             .replaceQueryParam("page")
+            .replaceQueryParam("sort")
             .build()
             .toString();
   }
