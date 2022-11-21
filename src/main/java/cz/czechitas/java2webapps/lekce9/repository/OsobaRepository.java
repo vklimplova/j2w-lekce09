@@ -1,5 +1,6 @@
 package cz.czechitas.java2webapps.lekce9.repository;
 
+import cz.czechitas.java2webapps.lekce9.entity.Adresa;
 import cz.czechitas.java2webapps.lekce9.entity.Osoba;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,9 +19,18 @@ import java.util.List;
 public interface OsobaRepository extends JpaRepository<Osoba, Long> {
   /**
    * Vyhledá všechny osoby s adresou v dané obci.
+   *
+   * Varianta pomocí HQL.
    */
   @Query("SELECT o FROM Osoba o JOIN o.adresa a WHERE a.obec = ?1")
   Page<Osoba> findByObec(String obec, Pageable pageable);
+
+  /**
+   * Vyhledá všechny osoby s adresou v dané obci.
+   *
+   * Varianta pomocí Spring Data JPA.
+   */
+  Page<Osoba> findOsobaByAdresa_Obec(String obec, Pageable pageable);
 
   /**
    * Vyhledá všechny osoby, které se narodily v daný den nebo dříve.
@@ -28,7 +38,7 @@ public interface OsobaRepository extends JpaRepository<Osoba, Long> {
   Page<Osoba> findByDatumNarozeniBefore(LocalDate datum, Pageable pageable);
 
   /**
-   * Vyhledá všechny osoby, jejichž příjmení začíná na uveddený text.
+   * Vyhledá všechny osoby, jejichž příjmení začíná na uvedený text.
    */
   Page<Osoba> findByPrijmeniStartingWithIgnoreCase(String prijmeni, Pageable pageable);
 
