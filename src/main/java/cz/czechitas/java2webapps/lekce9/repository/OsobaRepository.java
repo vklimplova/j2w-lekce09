@@ -1,6 +1,5 @@
 package cz.czechitas.java2webapps.lekce9.repository;
 
-import cz.czechitas.java2webapps.lekce9.entity.Adresa;
 import cz.czechitas.java2webapps.lekce9.entity.Osoba;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
-import java.util.List;
 
 /**
  * Repository pro tabulku {@code osoba}.

@@ -8,10 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>${title}</title>
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="/css/normalize.css" th:href="@{/css/normalize.css}">
-        <link rel="stylesheet" href="/css/skeleton.css" th:href="@{/css/skeleton.css}">
-        <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}">
-        <link rel="icon" type="image/png" href="/images/favicon.png" th:href="@{/images/favicon.png}">
+        <link rel="stylesheet" href="/css/normalize.css"/>
+        <link rel="stylesheet" href="/css/skeleton.css"/>
+        <link rel="stylesheet" href="/css/main.css"/>
+        <link rel="icon" type="image/png" href="/images/favicon.png"/>
     </head>
     <body>
     <main class="container">
@@ -19,6 +19,19 @@
     </main>
     </body>
     </html>
+[/#macro]
+
+[#macro totalCount]
+    <div class="totalCount">
+        [#if osoby.totalElements == 1]
+            Celkem nalezen <strong>${osoby.totalElements}</strong> záznam.
+        [#elseif osoby.totalElements <= 4]
+            Celkem nalezeny <strong>${osoby.totalElements}</strong> záznamy.
+        [#else ]
+            Celkem nalezeno <strong>${osoby.totalElements}</strong> záznamů.
+        [/#if]
+    </div>
+
 [/#macro]
 
 [#macro pager]
@@ -37,11 +50,14 @@
     [#if active]
         <span class="page active">${text}</span>
     [#else ]
-        <a href="${currentURL}?size=${osoby.size}&page=${page}" class="page">${text}</a>
+        <a href="${createURL({"size": osoby.size, "page": page})}" class="page">${text}</a>
     [/#if]
 [/#macro]
 
 [#macro controls]
+    [#if formInclude??]
+        [#include "/_forms/"+formInclude]
+    [/#if]
     <div class="controls">
         <a href="/vyber" class="button">Výběrový formulář</a>
     </div>

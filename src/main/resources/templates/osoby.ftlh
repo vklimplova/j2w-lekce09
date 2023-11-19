@@ -25,8 +25,7 @@
         <div>Seznam je prázdný.</div>
     [/#list]
 
-    <div class="totalCount">Celkem nalezeno ${osoby.totalElements} záznamů.</div>
-
+    [@c.totalCount /]
     [@c.pager /]
     [@c.controls /]
 

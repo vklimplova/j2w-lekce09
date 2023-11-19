@@ -2,7 +2,7 @@
 [@c.page title="Seznam osob"]
     <h1>Seznam osob</h1>
 
-    [#list osoby.content]
+    [#list osoby]
         <table class="u-full-width">
             <thead>
             <tr>
