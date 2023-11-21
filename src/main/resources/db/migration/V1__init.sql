@@ -17,5 +17,5 @@ CREATE TABLE osoba
 );
 
 CREATE INDEX ON adresa (obec);
-CREATE INDEX ON osoba (prijmeni);
+CREATE INDEX ON osoba (prijmeni, jmeno);
 CREATE INDEX ON osoba (datum_narozeni, prijmeni);
