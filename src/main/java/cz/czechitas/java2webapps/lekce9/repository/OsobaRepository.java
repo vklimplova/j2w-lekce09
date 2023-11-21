@@ -20,6 +20,7 @@ public interface OsobaRepository extends JpaRepository<Osoba, Long> {
    *
    * Varianta pomocí HQL.
    */
+
   @Query("SELECT o FROM Osoba o JOIN o.adresa a WHERE a.obec = ?1")
   Page<Osoba> findByObec(String obec, Pageable pageable);
 
